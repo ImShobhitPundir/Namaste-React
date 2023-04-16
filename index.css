@@ -1,3 +1,6 @@
+body{
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+}
 .header-container{
     display: flex;
     justify-content: space-between;
@@ -33,12 +36,48 @@
 }
 .rest-card{
     width: 200px;
-    height: 300px;
+    height: 270px;
     padding: 5px;
     background-color: #f5f5f5;
     cursor: pointer;
     margin:5px;
 }
+.rest-card:hover{
+    background-color: #eee;
+}
 .rest-img{
     width: 100%;
+}
+.rest-title{
+    font-size: 17px;
+    font-weight: 500;
+    word-break: break-word;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.rest-cuisines{
+    font-size: 12px;
+    color: #686b78;
+    margin-top: 8px;
+}
+
+.rest-details{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #535665;
+    margin-top: 20px;
+}
+.rest-rating{
+    background-color: #48c479;
+    color: #fff;
+    padding: 3px;
+}
+
+.top-rated-rest{
+    cursor: pointer;
+    border: none;
+    background-color: #3d4adc;
+    padding: 4px;
+    color:white;
 }
