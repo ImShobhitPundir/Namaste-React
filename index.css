@@ -1,3 +1,44 @@
-#heading{
-    color:red;
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.header-container .logo{
+    width:100px;
+}
+
+.nav-items > ul{
+    display: flex;
+    list-style: none;
+    padding-right: 50px;
+}
+
+.nav-items > ul >li{
+    margin: 10px;
+    font-size: 18px;
+}
+
+.body{
+    padding:20px 50px;
+}
+
+.search-container{
+    text-align: center;
+}
+
+.rest-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.rest-card{
+    width: 200px;
+    height: 300px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    margin:5px;
+}
+.rest-img{
+    width: 100%;
 }
