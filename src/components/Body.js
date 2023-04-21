@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurentCard from "./RestaurentCard";
+import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 
@@ -74,7 +74,7 @@ const Body = () => {
         ) : (
           <>
             {filteredRestaurantList?.map((row) => (
-              <RestaurentCard key={row.data.id} restData={row} />
+              <RestaurantCard key={row.data.id} restData={row} />
             ))}
           </>
         )}

@@ -6,17 +6,11 @@ const Shimmer = () => {
             <div class="shimmerBG title-line" style={{width:'300px',margin:'auto'}}></div>
         </div>
       <div className="rest-container">
-      
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
-         <ShimmerCard/>
+      {
+        Array(15).fill().map(()=>(
+          <ShimmerCard/>
+        ))
+      }        
 
       </div>
     </div>

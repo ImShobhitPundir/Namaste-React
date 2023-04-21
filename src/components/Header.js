@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { LOGO } from "../utils/constants";
+import Logo from "../assets/img/swiggy-logo1.png";
+import { Link } from "react-router-dom";
+// import { LOGO } from "../utils/constants";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -8,13 +10,13 @@ const Header = () => {
         <div className="logo-container">
           <img
             className="logo"
-            src={LOGO}
+            src={Logo}
           />
         </div>
         <div className="nav-items">
           <ul>
-            <li>Home</li>
-            <li>About</li>
+            <li><Link to='/'>Home</Link> </li>
+            <li><Link to='/about'>About</Link> </li>
             <li>Contact</li>
             <li>Cart</li>
           </ul>
