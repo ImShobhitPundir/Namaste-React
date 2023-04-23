@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
+import { filterData } from "../utils/Helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -20,11 +22,12 @@ const Body = () => {
     setFilteredRestaurantList(json.data?.cards[2]?.data?.data?.cards);
   }
 
-  function searchData(searchText, restaurantList) {
-    const searchD = restaurantList.filter((rest) =>
-      rest?.data?.name?.toLowerCase().includes(searchText?.toLowerCase())
-    );
-    return searchD;
+  filterData(searchText, restaurantList);
+
+  // if user offline
+  const isOnline = useOnline();
+  if(!isOnline){
+    return <h2>Offiline! Please check your internet connection.</h2>
   }
 
   // Return Early
@@ -55,13 +58,13 @@ const Body = () => {
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
-            const data = searchData(e.target.value, restaurantList);
+            const data = filterData(e.target.value, restaurantList);
             setFilteredRestaurantList(data);
           }}
         />
         <button
           onClick={() => {
-            const data = searchData(searchText, restaurantList);
+            const data = filterData(searchText, restaurantList);
             setFilteredRestaurantList(data);
           }}
         >

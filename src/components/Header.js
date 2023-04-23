@@ -19,6 +19,8 @@ const Header = () => {
             <li><Link to='/about'>About</Link> </li>
             <li>Contact</li>
             <li>Cart</li>
+            <li><Link to='/instamart'>Instamart</Link> </li>
+
           </ul>
           
         </div>
