@@ -15,17 +15,19 @@ const RestaurantCard = (props) => {
   } = restData.data;
 
   return (
-    <div className="rest-card">
+    <div className="w-[250px] h-[280px] shadow-lg m-2 hover:bg-gray-100">
       <Link to={"restaurant/single/" + id}>
-        <img className="rest-img" src={IMAGE_CDN + cloudinaryImageId} />
-        <div className="rest-title">{name}</div>
-        <p className="rest-cuisines">{cuisines.join(", ")}</p>
-        <div className="rest-details">
-          <span className="rest-rating">{avgRating}</span>
-          <span>•</span>
-          <span>{deliveryTime} MIN</span>
-          <span>•</span>
-          <span>{costForTwoString}</span>
+        <img src={IMAGE_CDN + cloudinaryImageId} />
+        <div className="p-2">
+          <div className="font-semibold text-md">{name}</div>
+          <p className="text-xs mt-1">{cuisines.join(", ")}</p>
+          <div className="flex justify-between text-xs mt-3">
+            <span className="bg-green-500 px-1 text-white">{avgRating}</span>
+            <span>•</span>
+            <span>{deliveryTime} MIN</span>
+            <span>•</span>
+            <span>{costForTwoString}</span>
+          </div>
         </div>
       </Link>
     </div>

@@ -37,11 +37,10 @@ const Body = () => {
   return restaurantList?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-     
-      <div className="search-container">
+    <div className="px-20 py-4">     
+      <div className="py-3 text-center">
         <button
-          className="top-rated-rest"
+          className="bg-blue-700 text-white px-2 py-1 rounded hover:bg-blue-900 mx-2"
           onClick={() => {
             const filterData = restaurantList.filter(
               (res) => res.data.avgRating > 4
@@ -61,17 +60,19 @@ const Body = () => {
             const data = filterData(e.target.value, restaurantList);
             setFilteredRestaurantList(data);
           }}
+          className="bg-gray-200 p-1 rounded mx-2"
         />
         <button
           onClick={() => {
             const data = filterData(searchText, restaurantList);
             setFilteredRestaurantList(data);
           }}
+          className="bg-green-600 p-1 rounded text-white text-sm hover:bg-green-800"
         >
           Search
         </button>
       </div>
-      <div className="rest-container">
+      <div className="flex flex-wrap">
         {filteredRestaurantList.length === 0 ? (
           <h5 style={{textAlign:'center'}}>No Restaurant Found</h5>
         ) : (

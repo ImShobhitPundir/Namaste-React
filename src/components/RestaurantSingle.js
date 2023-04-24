@@ -15,29 +15,32 @@ const RestaurentSignle = () => {
   return !data ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <h2>{data.name}</h2>
-      <p>{data.cuisines.join(", ")}</p>
-      <p>{data.city}</p>
+    <div className="px-40 py-4">
+      <h2 className="font-bold text-xl text-gray-700">{data.name}</h2>
+      <p className="text-sm text-gray-700 mt-2">{data.cuisines.join(", ")}</p>
+      <p className="text-sm text-gray-700">{data.city}</p>
       
-      <p style={{fontSize:'13px'}}><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/v1648208530/surgecreatives/info" alt="" style={{marginTop:'15px'}}/> {data.feeDetails.message}</p>
+      <div className="flex my-4">
+      <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/v1648208530/surgecreatives/info" alt=""/>
+      <p className="text-sm ml-2">{data.feeDetails.message}</p>
+      </div>
 
-      <div style={{borderTop:'.5px dotted #d3d3d3'}}>
-      <p style={{fontWeight:'bold'}}>{data.sla.slaString} | {data.costForTwoMessage}</p>
+      <div className="border-dashed  border-t border-gray-400 ">
+      <p className="font-bold mt-3 text-gray-800">{data.sla.slaString} | {data.costForTwoMessage}</p>
       </div>
 
       <br/>
-      <h3>Recommended ({menu.length})</h3>
-      <table style={{borderCollapse: 'collapse'}}>
+      <h3 className="font-bold mt-5 mb-3">Recommended ({menu.length})</h3>
+      <table >
         {menu?.map((row,index) => (
-          <tr key={index} style={{borderTop:'.5px solid #d3d3d3'}}>
-            <td style={{width:'80%'}}>
-                <p style={{color:'#3e4152',fontWeight:500, fontSize:'1rem'}}>{row.card.info.name}</p>
+          <tr key={index} className="border-solid border-t border-gray-400">
+            <td className="py-5">
+                <p className="font-semibold">{row.card.info.name}</p>
                 <p>Rs. {row.card.info.price/100}</p>
-                <p style={{fontSize:'13px', color:'rgba(40,44,63,.45)'}}>{row.card.info.description}</p>
+                <p className="text-sm text-gray-400 mt-4">{row.card.info.description}</p>
 
             </td>
-            <td><img src={IMAGE_CDN+row.card.info.imageId} style={{width:'150px',borderRadius:'10px'}}/></td>
+            <td className="py-5"><img src={IMAGE_CDN+row.card.info.imageId} className="w-[200px] h-[120px] rounded-sm object-cover"/></td>
           </tr>
         ))}
       </table>
