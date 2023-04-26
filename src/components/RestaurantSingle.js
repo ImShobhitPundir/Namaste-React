@@ -30,7 +30,7 @@ const RestaurentSignle = () => {
       </div>
 
       <br/>
-      <h3 className="font-bold mt-5 mb-3">Recommended ({menu.length})</h3>
+      <h3 className="font-bold mt-5 mb-3">Recommended ({menu?.length})</h3>
       <table >
         {menu?.map((row,index) => (
           <tr key={index} className="border-solid border-t border-gray-400">

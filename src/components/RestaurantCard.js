@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { IMAGE_CDN } from "../utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
   // this is Object Destructuring
@@ -13,6 +15,8 @@ const RestaurantCard = (props) => {
     costForTwoString,
     cloudinaryImageId,
   } = restData.data;
+
+  const {user} = useContext(UserContext);
 
   return (
     <div className="w-[250px] h-[280px] shadow-lg m-2 hover:bg-gray-100">
@@ -28,6 +32,7 @@ const RestaurantCard = (props) => {
             <span>•</span>
             <span>{costForTwoString}</span>
           </div>
+          <p>{user.name} {user.email}</p>
         </div>
       </Link>
     </div>

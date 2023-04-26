@@ -1,6 +1,8 @@
 import React from "react";
 import Profile from "./Profile";
 import ProfileFun from "./ProfileFun";
+import UserContext from "../utils/UserContext";
+
 
 class About extends React.Component {
   constructor(props) {
@@ -27,6 +29,10 @@ class About extends React.Component {
         <Profile name="Shobhit Rana"/>
         {/* <Profile name="Shobhit"/> */}
         {/* <ProfileFun/> */}
+        {/* use context in class component */}
+        <UserContext.Consumer>
+          {({user})=><h4>{user.name} | {user.email}</h4>}
+        </UserContext.Consumer>
       </div>
     );
   }

@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { filterData } from "../utils/Helper";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
   const [searchText, setSearchText] = useState();
+  const {user, setUser} = useContext(UserContext);
+
   useEffect(() => {
     getRestaurant();
   }, []);
@@ -71,6 +74,27 @@ const Body = () => {
         >
           Search
         </button>
+
+        <input
+          type="text"
+          placeholder="Update Context Name..."
+          value={user.name}
+          onChange={(e) => setUser({
+            ...user,
+            name:e.target.value
+          })}
+          className="bg-gray-200 p-1 rounded mx-2"
+        />
+        <input
+          type="text"
+          placeholder="Update Context Email..."
+          value={user.email}
+          onChange={(e) => setUser({
+            ...user,
+            email:e.target.value
+          })}
+          className="bg-gray-200 p-1 rounded mx-2"
+        />
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurantList.length === 0 ? (
