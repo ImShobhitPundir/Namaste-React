@@ -75,7 +75,7 @@ const Body = () => {
           Search
         </button>
 
-        <input
+        {/* <input
           type="text"
           placeholder="Update Context Name..."
           value={user.name}
@@ -94,7 +94,7 @@ const Body = () => {
             email:e.target.value
           })}
           className="bg-gray-200 p-1 rounded mx-2"
-        />
+        /> */}
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurantList.length === 0 ? (

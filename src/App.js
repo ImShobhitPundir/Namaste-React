@@ -10,22 +10,27 @@ import RestaurentSignle from "./components/RestaurantSingle";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 //import Instamart from "./components/Instamart";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
-  const [user,setUser] = useState({
+  const [user, setUser] = useState({
     name: "Shobhit Pundir",
     email: "er.shobhitpundir@gmail.com",
   });
 
   return (
     <div className="app-layout">
-      <UserContext.Provider value={{user:user, setUser:setUser}}>
-        <Header />
-        <Outlet />
-        <Footer />
-      </UserContext.Provider>
+      <Provider store={store}>
+        <UserContext.Provider value={{ user: user, setUser: setUser }}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
+      </Provider>
     </div>
   );
 };
@@ -56,6 +61,10 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
       },
     ],
   },

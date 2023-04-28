@@ -32,7 +32,7 @@ const RestaurantCard = (props) => {
             <span>•</span>
             <span>{costForTwoString}</span>
           </div>
-          <p>{user.name} {user.email}</p>
+          {/* <p>{user.name} {user.email}</p> */}
         </div>
       </Link>
     </div>
