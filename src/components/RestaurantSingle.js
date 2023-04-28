@@ -23,7 +23,7 @@ const RestaurentSignle = () => {
   return !data ? (
     <Shimmer />
   ) : (
-    <div className="px-40 py-4">
+    <div className="px-40 py-4" data-testid="menu">
       <h2 className="font-bold text-xl text-gray-700">{data.name}</h2>
       <p className="text-sm text-gray-700 mt-2">{data.cuisines.join(", ")}</p>
       <p className="text-sm text-gray-700">{data.city}</p>
@@ -49,7 +49,7 @@ const RestaurentSignle = () => {
             </td>
             <td className="py-5 text-center">
               <img src={IMAGE_CDN+row.card.info.imageId} className="w-[200px] h-[120px] rounded-sm object-cover"/>
-              <button className="shadow-md p-1 px-3 text-green-700 font-bold hover:shadow-lg mt-[-30px]" onClick={()=>handleAddItem(row.card.info)}>ADD +</button>
+              <button className="shadow-md p-1 px-3 text-green-700 font-bold hover:shadow-lg mt-[-30px]" onClick={()=>handleAddItem(row.card.info)} data-testid="add-cart-btn">ADD +</button>
             
             </td>
           </tr>

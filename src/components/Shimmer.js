@@ -5,7 +5,7 @@ const Shimmer = () => {
         <div className="search-container" style={{padding:'5px'}}>
             <div className="shimmerBG title-line" style={{width:'300px',margin:'auto'}}></div>
         </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" data-testid="shimmer">
       {
         Array(15).fill().map((row,index)=>(
           <ShimmerCard key={index}/>

@@ -64,6 +64,7 @@ const Body = () => {
             setFilteredRestaurantList(data);
           }}
           className="bg-gray-200 p-1 rounded mx-2"
+          data-testid="search-input"
         />
         <button
           onClick={() => {
@@ -71,6 +72,7 @@ const Body = () => {
             setFilteredRestaurantList(data);
           }}
           className="bg-green-600 p-1 rounded text-white text-sm hover:bg-green-800"
+          data-testid="search-btn"
         >
           Search
         </button>
@@ -96,7 +98,7 @@ const Body = () => {
           className="bg-gray-200 p-1 rounded mx-2"
         /> */}
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" data-testid="restaurants">
         {filteredRestaurantList.length === 0 ? (
           <h5 style={{textAlign:'center'}}>No Restaurant Found</h5>
         ) : (

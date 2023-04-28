@@ -39,13 +39,13 @@ const Header = () => {
         <button onClick={() => setIsLoggedIn(true)}>Login</button>
       )}
       <p className="p-5 ">
-        <Link to="/cart">
+        <Link to="/cart" >
           {cartItems?.length > 0 ? (
-            <span className="bg-orange-600 rounded-sm text-white text-xs px-2 mr-1">
+            <span className="bg-orange-600 rounded-sm text-white text-xs px-2 mr-1" data-testid="cart-value">
               {cartItems.length}
             </span> 
           ) : (
-            <span className="bg-gray-600 rounded-sm text-white text-xs px-2 mr-1">
+            <span className="bg-gray-600 rounded-sm text-white text-xs px-2 mr-1" data-testid="cart-value">
               0
             </span> 
           )}
